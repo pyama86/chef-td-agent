@@ -10,7 +10,7 @@ Chef::Provider.send(:include, TdAgent::Version)
 
 include_recipe 'td-agent::install'
 
-reload_action = (reload_available?) ? :reload : :restart
+reload_action = :restart
 
 major_version = major
 template "/etc/td-agent/td-agent.conf" do
